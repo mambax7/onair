@@ -10,7 +10,7 @@
  * of supporting developers from this source code or any supporting source code
  * which is considered copyrighted (c) material of the original comment or credit authors.
  *
- * @copyright   The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright   XOOPS Project (https://xoops.org)
  * @license       http://www.fsf.org/copyleft/gpl.html GNU public license
  * @author       Michael Albertsen (culex) <http://www.culex.dk>
  * @version      $Id:admin_header.php 630 2009-06-07 15:12 culex $

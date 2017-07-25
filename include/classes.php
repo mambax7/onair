@@ -10,7 +10,7 @@
  * of supporting developers from this source code or any supporting source code
  * which is considered copyrighted (c) material of the original comment or credit authors.
  *
- * @copyright   The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright   XOOPS Project (https://xoops.org)
  * @license       http://www.fsf.org/copyleft/gpl.html GNU public license
  * @author       Michael Albertsen (culex) <http://www.culex.dk>
  * @version      $Id:simple_now.php 2009-06-19 13:45 culex $
@@ -27,7 +27,7 @@ include XOOPS_ROOT_PATH.'/class/xoopsformloader.php';
  *
  * Create 24 hours array for select drop down in admin, stepped by 15 minutes interval
  *
- * @copyright   The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright   XOOPS Project (https://xoops.org)
  * @license       http://www.fsf.org/copyleft/gpl.html GNU public license
  * @author       Michael Albertsen (culex) <http://www.culex.dk>
  * @version      $Id:simple_now.php 2009-06-19 13:45 culex $
@@ -60,7 +60,7 @@ class onair_XoopsFormTimeEuro extends XoopsFormElementTray
  *
  * Create 12 hours (am/pm) array for select drop down in admin, stepped by 15 minutes interval
  *
- * @copyright   The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright   XOOPS Project (https://xoops.org)
  * @license       http://www.fsf.org/copyleft/gpl.html GNU public license
  * @author       Michael Albertsen (culex) <http://www.culex.dk>
  * @version      $Id:simple_now.php 2009-06-19 13:45 culex $
@@ -92,7 +92,7 @@ class onair_XoopsFormTimeUs extends XoopsFormElementTray
  *
  * Reads content of imagefolder and prepare filenames for database
  *
- * @copyright   The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright   XOOPS Project (https://xoops.org)
  * @license       http://www.fsf.org/copyleft/gpl.html GNU public license
  * @author       Michael Albertsen (culex) <http://www.culex.dk>
  * @version      $Id:simple_now.php 2009-06-19 13:45 culex $
