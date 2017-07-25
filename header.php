@@ -2,7 +2,7 @@
 /**
  * Onair Module
  *
- * Use this to show details, picture and schedule of timed events in a block. 
+ * Use this to show details, picture and schedule of timed events in a block.
  *
  * LICENSE
  *
@@ -10,11 +10,9 @@
  * of supporting developers from this source code or any supporting source code
  * which is considered copyrighted (c) material of the original comment or credit authors.
  *
- * @copyright   XOOPS Project (https://xoops.org)
+ * @copyright     XOOPS Project (https://xoops.org)
  * @license       http://www.fsf.org/copyleft/gpl.html GNU public license
- * @author       Michael Albertsen (culex) <http://www.culex.dk>
- * @version      $Id:header.php 2009-06-19 13:54 culex $
+ * @author        Michael Albertsen (culex) <http://www.culex.dk>
  * @since         File available since Release 1.0.0
  */
-include '../../mainfile.php';
-?>
+include __DIR__ . '/../../mainfile.php';

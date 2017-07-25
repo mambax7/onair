@@ -2,7 +2,7 @@
 /**
  * Onair Module
  *
- * Use this to show details, picture and schedule of timed events in a block. 
+ * Use this to show details, picture and schedule of timed events in a block.
  *
  * LICENSE
  *
@@ -10,25 +10,23 @@
  * of supporting developers from this source code or any supporting source code
  * which is considered copyrighted (c) material of the original comment or credit authors.
  *
- * @copyright   XOOPS Project (https://xoops.org)
+ * @copyright     XOOPS Project (https://xoops.org)
  * @license       http://www.fsf.org/copyleft/gpl.html GNU public license
- * @author       Michael Albertsen (culex) <http://www.culex.dk>
- * @version      $Id:detailplaylist.php 2009-06-19 13:49 culex $
+ * @author        Michael Albertsen (culex) <http://www.culex.dk>
  * @since         File available since Release 1.0.0
  */
-		include 'header.php';
-		include 'include/functions.php';
-		$xoopsOption['template_main'] = 'onair_playlistdetail.html';
-		include XOOPS_ROOT_PATH.'/header.php';
-		global $xoopsDB;
-if (isset($_GET['plext']) && $_GET['plext'] == 'info') {
-        $plext = 'info';
-		}
-
-switch($plext) {
-        case "info":
-                onair_PlaylistById(intval($_GET["pl_id"]));
-                break;
+include __DIR__ . '/header.php';
+include __DIR__ . '/include/functions.php';
+$GLOBALS['xoopsOption']['template_main'] = 'onair_playlistdetail.tpl';
+include XOOPS_ROOT_PATH . '/header.php';
+global $xoopsDB;
+if (isset($_GET['plext']) && $_GET['plext'] === 'info') {
+    $plext = 'info';
 }
-include XOOPS_ROOT_PATH.'/footer.php';
-?>
+
+switch ($plext) {
+    case 'info':
+        onair_PlayListById((int)$_GET['pl_id']);
+        break;
+}
+include XOOPS_ROOT_PATH . '/footer.php';

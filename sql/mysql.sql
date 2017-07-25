@@ -1,51 +1,68 @@
 CREATE TABLE oa_program (
-oa_id int(5) unsigned NOT NULL auto_increment,
-oa_name varchar(50) NOT NULL default '',
-oa_station varchar(50) NOT NULL default '',
-oa_title varchar(50) NOT NULL default '',
-oa_day varchar(18) NOT NULL default '',
-oa_start varchar(15) NOT NULL default '',
-oa_stop varchar(15) NOT NULL default '',
-oa_image text NOT NULL,
-oa_description text NOT NULL,
-oa_plugin varchar(50) NOT NULL default '',
-oa_stream varchar(75) NOT NULL default '',
-PRIMARY KEY (oa_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+  oa_id          INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  oa_name        VARCHAR(50)     NOT NULL DEFAULT '',
+  oa_station     VARCHAR(50)     NOT NULL DEFAULT '',
+  oa_title       VARCHAR(50)     NOT NULL DEFAULT '',
+  oa_day         VARCHAR(18)     NOT NULL DEFAULT '',
+  oa_start       VARCHAR(15)     NOT NULL DEFAULT '',
+  oa_stop        VARCHAR(15)     NOT NULL DEFAULT '',
+  oa_image       TEXT            NOT NULL,
+  oa_description TEXT            NOT NULL,
+  oa_plugin      VARCHAR(50)     NOT NULL DEFAULT '',
+  oa_stream      VARCHAR(75)     NOT NULL DEFAULT '',
+  PRIMARY KEY (oa_id),
+  --   UNIQUE KEY (oa_id2),
+  --   KEY published_ihome (published,ihome),
+  KEY title (oa_title(40))
+  --   KEY created (created),
+  -- FULLTEXT KEY search (title,hometext,bodytext)
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8
+  AUTO_INCREMENT = 1;
 
 CREATE TABLE oa_playlist (
-pl_id int(5) unsigned NOT NULL auto_increment,
-pl_station varchar(50) NOT NULL default '',
-pl_title varchar(50) NOT NULL default '',
-pl_day varchar(50) NOT NULL default '',
-pl_start varchar(20) NOT NULL default '',
-pl_stop varchar(20) NOT NULL default '',
-pl_image text NOT NULL,
-pl_description text NOT NULL,
-pl_name text NOT NULL,
-pl_date DATE NOT NULL,
-PRIMARY KEY (pl_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  pl_id          INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  pl_station     VARCHAR(50)     NOT NULL DEFAULT '',
+  pl_title       VARCHAR(50)     NOT NULL DEFAULT '',
+  pl_day         VARCHAR(50)     NOT NULL DEFAULT '',
+  pl_start       VARCHAR(20)     NOT NULL DEFAULT '',
+  pl_stop        VARCHAR(20)     NOT NULL DEFAULT '',
+  pl_image       TEXT            NOT NULL,
+  pl_description TEXT            NOT NULL,
+  pl_name        TEXT            NOT NULL,
+  pl_date        DATE            NOT NULL,
+  PRIMARY KEY (pl_id)
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8
+  AUTO_INCREMENT = 1;
 
 
 CREATE TABLE oa_hitlist (
-  oa_songid int(10) unsigned NOT NULL auto_increment,
-  oa_songsong varchar(50) NOT NULL default '',
-  oa_songtime varchar(100) NOT NULL default '',
-  oa_songday varchar(1) NOT NULL,
-  oa_songweek varchar(2) NOT NULL default '',
-  oa_songyear varchar(4) NOT NULL default '',
-  PRIMARY KEY  (oa_songid)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  oa_songid   INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  oa_songsong VARCHAR(50)      NOT NULL DEFAULT '',
+  oa_songtime VARCHAR(100)     NOT NULL DEFAULT '',
+  oa_songday  VARCHAR(1)       NOT NULL,
+  oa_songweek VARCHAR(2)       NOT NULL DEFAULT '',
+  oa_songyear VARCHAR(4)       NOT NULL DEFAULT '',
+  PRIMARY KEY (oa_songid)
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8
+  AUTO_INCREMENT = 15;
 
 CREATE TABLE oa_charts (
-  ch_songid int(10) unsigned NOT NULL auto_increment,
-  ch_songsong varchar(200) NOT NULL default '',
-  ch_songweekstotal varchar(3) NOT NULL default '',
-  ch_songlastweek varchar(3) NOT NULL,
-  ch_songtopplace varchar(3) NOT NULL default '',
-  ch_songthisweek varchar(3) NOT NULL default'',
-  ch_songweek varchar(2) NOT NULL default '',
-  ch_songplaytime varchar(8) NOT NULL default '',
-  PRIMARY KEY  (ch_songid)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  ch_songid         INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  ch_songsong       VARCHAR(200)     NOT NULL DEFAULT '',
+  ch_songweekstotal VARCHAR(3)       NOT NULL DEFAULT '',
+  ch_songlastweek   VARCHAR(3)       NOT NULL,
+  ch_songtopplace   VARCHAR(3)       NOT NULL DEFAULT '',
+  ch_songthisweek   VARCHAR(3)       NOT NULL DEFAULT '',
+  ch_songweek       VARCHAR(2)       NOT NULL DEFAULT '',
+  ch_songplaytime   VARCHAR(8)       NOT NULL DEFAULT '',
+  PRIMARY KEY (ch_songid)
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8
+  AUTO_INCREMENT = 15;
