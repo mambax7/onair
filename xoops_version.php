@@ -15,22 +15,19 @@
  * @author        Michael Albertsen (culex) <http://www.culex.dk>
  * @since         File available since Release 1.0.0
  */
-$modversion['version']       = 1.05;
-$modversion['module_status'] = 'Beta 1';
-$modversion['release_date']  = '2014/06/05';
-$modversion['name']          = _MI_ONAIR_MODULE_NAME;
-$modversion['description']   = _MI_ONAIR_MODULE_DESC;
-$modversion['credits']       = 'Developped by Culex http://www.culex.dk';
-$modversion['author']        = 'Culex';
-$modversion['help']          = 'page=help';
-$modversion['license']       = 'GNU GPL 2.0 or later';
-$modversion['license_url']   = 'www.gnu.org/licenses/gpl-2.0.html';
-$modversion['official']      = 0; //1 indicates supported by XOOPS Dev Team, 0 means 3rd party supported
-$modversion['image']         = 'assets/images/logoModule.png';
-$modversion['dirname']       = basename(__DIR__);
-//$modversion['dirmoduleadmin']      = 'Frameworks/moduleclasses';
-//$modversion['icons16']             = 'Frameworks/moduleclasses/icons/16';
-//$modversion['icons32']             = 'Frameworks/moduleclasses/icons/32';
+$modversion['version']             = 1.05;
+$modversion['module_status']       = 'Beta 1';
+$modversion['release_date']        = '2017/06/05';
+$modversion['name']                = _MI_ONAIR_MODULE_NAME;
+$modversion['description']         = _MI_ONAIR_MODULE_DESC;
+$modversion['credits']             = 'Developped by Culex http://www.culex.dk';
+$modversion['author']              = 'Culex';
+$modversion['help']                = 'page=help';
+$modversion['license']             = 'GNU GPL 2.0 or later';
+$modversion['license_url']         = 'www.gnu.org/licenses/gpl-2.0.html';
+$modversion['official']            = 0; //1 indicates supported by XOOPS Dev Team, 0 means 3rd party supported
+$modversion['image']               = 'assets/images/logoModule.png';
+$modversion['dirname']             = basename(__DIR__);
 $modversion['modicons16']          = 'assets/images/icons/16';
 $modversion['modicons32']          = 'assets/images/icons/32';
 $modversion['module_website_url']  = 'www.xoops.org';
@@ -60,6 +57,14 @@ $modversion['adminmenu']   = 'admin/menu.php';
 $modversion['hasMain']        = 1;
 $modversion['sub'][1]['name'] = _MI_ONAIR_PLAYLISTMENU;
 $modversion['sub'][1]['url']  = 'playlists.php';
+
+// ------------------- Help files ------------------- //
+$modversion['helpsection'] = array(
+    ['name' => _MI_ONAIR_OVERVIEW, 'link' => 'page=help'],
+    ['name' => _MI_ONAIR_DISCLAIMER, 'link' => 'page=disclaimer'],
+    ['name' => _MI_ONAIR_LICENSE, 'link' => 'page=license'],
+    ['name' => _MI_ONAIR_SUPPORT, 'link' => 'page=support'],
+);
 
 // Blocks
 $modversion['blocks'][1]['file']        = 'simple_now.php';

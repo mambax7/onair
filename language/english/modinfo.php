@@ -43,3 +43,15 @@ define('_MI_ONAIR_STREAM_DESC', 'This is ment as a url for the stream of interne
 //1.05
 define('_MI_ONAIR_NAME', 'On Air');
 define('_MI_ONAIR_DIRNAME', basename(dirname(dirname(__DIR__))));
+//Help
+define('_MI_ONAIR_DIRNAME', basename(dirname(dirname(__DIR__))));
+define('_MI_ONAIR_HELP_HEADER', __DIR__.'/help/helpheader.tpl');
+define('_MI_ONAIR_BACK_2_ADMIN', 'Back to Administration of ');
+define('_MI_ONAIR_OVERVIEW', 'Overview');
+
+//define('_MI_ONAIR_HELP_DIR', __DIR__);
+
+//help multi-page
+define('_MI_ONAIR_DISCLAIMER', 'Disclaimer');
+define('_MI_ONAIR_LICENSE', 'License');
+define('_MI_ONAIR_SUPPORT', 'Support');
