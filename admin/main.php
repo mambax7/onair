@@ -62,12 +62,12 @@ function Choice()
     global $xoopsModule;
     xoops_cp_header();
     echo '<table class="outer" width="100%"><tr>';
-    echo "<td class='even'><center><a href='main.php?op=Addnew'>" . _AM_ONAIR_ADDNEW . '</a></center></td>';
-    echo "<td class='even'><center><a href='main.php?op=Eventshow'>" . _AM_ONAIR_EDIT . '</a></center></td>';
-    echo "<td class='even'><center><a href='playlist.php?op=Playlistshow'>" . _AM_ONAIR_SHOWPLAYLISTS . '</a></center></td>';
-    echo "<td class='even'><center><a href='../help.php'" . _AM_ONAIR_HELP . '</a></center></td>';
-    echo "<td class='even'><center><a href='songs.php" . _AM_ONAIR_SONGSADMIN . '</a></center></td>';
-    echo "<td class='even'><center><a href='../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod=" . $xoopsModule->getVar('mid') . "'>" . _AM_ONAIR_CONFIG . '</a></center></td>';
+    echo "<td class='even'><div class='center;'><a href='main.php?op=Addnew'>" . _AM_ONAIR_ADDNEW . '</a></div></td>';
+    echo "<td class='even'><div class='center;'><a href='main.php?op=Eventshow'>" . _AM_ONAIR_EDIT . '</a></div></td>';
+    echo "<td class='even'><div class='center;'><a href='playlist.php?op=Playlistshow'>" . _AM_ONAIR_SHOWPLAYLISTS . '</a></div></td>';
+    echo "<td class='even'><div class='center;'><a href='../help.php'" . _AM_ONAIR_HELP . '</a></div></td>';
+    echo "<td class='even'><div class='center;'><a href='songs.php" . _AM_ONAIR_SONGSADMIN . '</a></div></td>';
+    echo "<td class='even'><div class='center;'><a href='../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod=" . $xoopsModule->getVar('mid') . "'>" . _AM_ONAIR_CONFIG . '</a></div></td>';
     echo '</tr></table>';
     xoops_cp_footer();
 }
@@ -290,9 +290,9 @@ function onair_EventShow()
          . _AM_ONAIR_START
          . "</b></td><td class='even'><b>"
          . _AM_ONAIR_STOP
-         . "</b></td><td colspan='2' class='even'><center><b>"
+         . "</b></td><td colspan='2' class='even'><div class='center;'><b>"
          . _AM_ONAIR_ACTION
-         . "</center></b></td><td colspan='2' class='even'><center><b>"
+         . "</div></b></td><td colspan='2' class='even'><center><b>"
          . _AM_ONAIR_MAKEPLAYLIST
          . '</center></b></td></tr>';
 

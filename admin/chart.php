@@ -207,13 +207,13 @@ function onair_ChartShow()
     $myts  = MyTextSanitizer::getInstance();
     $weeks = 1;
     echo "<table border='0' width='100%' class='outer' align='center'>
-        <tr><td class='even'><b><center>Week numbes.: ";
+        <tr><td class='even'><b><div class='center;'>Week numbes.: ";
     while ($weeks <= 52) {
         echo "<a href='chart.php?op=chart_show&amp;ch_week=$weeks'>" . $weeks . '</a> ';
         ++$weeks;
     }
 
-    echo "</b></td></center><table border='0' width='100%' class='outer' align='center'>
+    echo "</b></td></div><table border='0' width='100%' class='outer' align='center'>
         <tr><td class='even'><b>"
          . _AM_ONAIR_CHARTTHISWEEK
          . "</b></td><td class='even'><b>"
@@ -224,9 +224,9 @@ function onair_ChartShow()
          . _AM_ONAIR_CHARTWEEKSTOTAL
          . "</b></td><td class='even'><b>"
          . _AM_ONAIR_CHARTSONG
-         . "</b></td><td colspan='2' class='even'><center><b>"
+         . "</b></td><td colspan='2' class='even'><div class='center;'><b>"
          . _AM_ONAIR_ACTION
-         . '</center></b></td></tr>';
+         . '</div></b></td></tr>';
     $showbyweek = $_GET['ch_week'];
     $result     = $xoopsDB->queryF('SELECT * FROM ' . $xoopsDB->prefix('oa_chart') . ' WHERE ch_chartweek=' . (int)$showbyweek . ' ORDER BY ch_chartthisweek LIMIT 0,20;');
     while ($myrow = $xoopsDB->fetchArray($result)) {

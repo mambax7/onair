@@ -170,7 +170,7 @@ function onair_SongShow()
     xoops_cp_header();
     $myts = MyTextSanitizer::getInstance();
     echo "<table border='0' width='100%' class='outer' align='center'>
-        <tr><td class='even'><b>" . _AM_ONAIR_SONGID . "</b></td><td class='even'><b>" . _AM_ONAIR_SONGTITLE . "</b></td><td colspan='2' class='even'><center><b>" . _AM_ONAIR_ACTION . '</center></b></td></tr>';
+        <tr><td class='even'><b>" . _AM_ONAIR_SONGID . "</b></td><td class='even'><b>" . _AM_ONAIR_SONGTITLE . "</b></td><td colspan='2' class='even'><div class='center;'><b>" . _AM_ONAIR_ACTION . '</div></b></td></tr>';
 
     $result = $xoopsDB->query('SELECT oa_songid, oa_songday, oa_songweek, oa_songyear, oa_songsong ,' . ' oa_songtime FROM ' . $xoopsDB->prefix('oa_hitlist') . ' ORDER BY oa_songsong, oa_songweek');
     while ($myrow = $xoopsDB->fetchArray($result)) {

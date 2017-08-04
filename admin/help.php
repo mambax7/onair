@@ -41,19 +41,19 @@ echo "<p>Culex On-air was originally build as a radio related script to run a ro
 <p>5) The plugins write songinfo to a small file on your your hp to let you show wich song your playing. <br>
   Default is Now Playing (winamp) and for DireTTore </p>
   <br><br>
-  <strong><u>Setup : RDS plug-in (Direttore)</strong></u> <a href='http://www.culex.dk/modules/PDdownloads/visit.php?cid=3&lid=2' target='_blank'>Download here</a><br><br>1) Install using the downloaded file, and run program. The settings are pretty easy to follow. <br>1) Just type in your ftp.<br>2) password to ftp.<br>3) Where do you want txt file to be upload to and name of txt file / Onair default is root <em>(/)</em> and <em>(direttore.txt)</em><br>4) Path to your local folder of DireTTore log files.<br>5) Test and your ready to use.<br><br><center><img src='../assets/images/helpfiles/direttore_01.png' align='center'></img></center>
+  <strong><u>Setup : RDS plug-in (Direttore)</strong></u> <a href='http://www.culex.dk/modules/PDdownloads/visit.php?cid=3&lid=2' target='_blank'>Download here</a><br><br>1) Install using the downloaded file, and run program. The settings are pretty easy to follow. <br>1) Just type in your ftp.<br>2) password to ftp.<br>3) Where do you want txt file to be upload to and name of txt file / Onair default is root <em>(/)</em> and <em>(direttore.txt)</em><br>4) Path to your local folder of DireTTore log files.<br>5) Test and your ready to use.<br><br><div class="center;"><img src='../assets/images/helpfiles/direttore_01.png' align='center'></img></div>
   <br><br>
   <strong><u>Setup : Now Playing plug-in (winamp)</strong></u> <a href='http://www.culex.dk/modules/PDdownloads/visit.php?cid=3&lid=1' target='_blank'>Download here</a>
   <br><br>
   The installation of this plugin is a little more complex but follow these instructions and<br>you'll have no problems (i hope).<br><br>
   1) Install as normal program on your pc.
-  2) Open winamp and choose setting like this<br><br><center><img src='../assets/images/helpfiles/np_00.png'></img></center>
+  2) Open winamp and choose setting like this<br><br><div class='center;'><img src='../assets/images/helpfiles/np_00.png'></img></div>
   <br><br>3) Make setting similar to these.:
-  <center><br><br><img src='../assets/images/helpfiles/np_01.png'</img><br>
+  <div class='center;'><br><br><img src='../assets/images/helpfiles/np_01.png'</img><br>
   <br><img src='../assets/images/helpfiles/np_02.png'</img><br>
   <br><img src='../assets/images/helpfiles/np_03.png'</img><br>
-  <br><img src='../assets/images/helpfiles/np_04.png'</img><br></center>
-  <br>4) Open Now playing html-template on your local installation like this.: <br><br><center><img src='../assets/images/helpfiles/np_05.png'</img></center><br><br>
+  <br><img src='../assets/images/helpfiles/np_04.png'</img><br></div>
+  <br>4) Open Now playing html-template on your local installation like this.: <br><br><div class='center;'><img src='../assets/images/helpfiles/np_05.png'</img></div><br><br>
   <br>Delete all text from the file in your favorite editor and insert this (<em>As shown in the picture</em>:
   <br><br><form >
   <label>
