@@ -58,7 +58,7 @@ function b_Onair_Show()
             $nowtime = date('H:i:s');
         }
     }
-    $block = array();
+    $block = [];
     $myts  = MyTextSanitizer::getInstance();
     // Get data according to current time
     $sql    = 'SELECT * FROM  ' . $xoopsDB->prefix('oa_program') . " WHERE ('$nowtime' BETWEEN oa_start AND oa_stop) AND '$nowday' = oa_day ORDER BY oa_day,oa_start LIMIT 1";
@@ -73,7 +73,7 @@ function b_Onair_Show()
             $myrow['oa_stop'] = '23:59:59';
         }
         $limiter       = $myrow['oa_stop'];
-        $message       = array();
+        $message       = [];
         $oa_pluginname = $myrow['oa_plugin'];
         include XOOPS_ROOT_PATH . '/modules/onair/plugins/plugins.php';
         $message['id']  = $myrow['oa_id'];
@@ -138,7 +138,7 @@ function b_Onair_Show()
         $sqlnext2    = 'SELECT * FROM  ' . $xoopsDB->prefix('oa_program') . " WHERE '$nowday2' = oa_day order by oa_start, oa_stop LIMIT 1";
         $resultnext2 = $xoopsDB->queryF($sqlnext2);
         while ($myrownext = $xoopsDB->fetchArray($resultnext2)) {
-            $messagenext        = array();
+            $messagenext        = [];
             $messagenext['id']  = $myrownext['oa_id'];
             $messagenext['day'] = onair_Numbers2DaysBlock($myrownext['oa_day']);
             if ($timetype == '1') {
@@ -165,7 +165,7 @@ function b_Onair_Show()
     }
     if ($resultnext) {
         while ($myrownext = $xoopsDB->fetchArray($resultnext)) {
-            $messagenext        = array();
+            $messagenext        = [];
             $messagenext['id']  = $myrownext['oa_id'];
             $messagenext['day'] = onair_Numbers2DaysBlock($myrownext['oa_day']);
             if ($timetype == '1') {

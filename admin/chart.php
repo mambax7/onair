@@ -82,7 +82,7 @@ function onair_ChartDel($del = 0)
         redirect_header('chart.php', 2, _AM_ONAIR_CHARTDEL);
     } else {
         xoops_cp_header();
-        xoops_confirm(array('ch_chartid' => $_GET['ch_chartid'], 'del' => 1), 'chart.php?op=chart_delete', _AM_ONAIR_SUREDELETE);
+        xoops_confirm(['ch_chartid' => $_GET['ch_chartid'], 'del' => 1], 'chart.php?op=chart_delete', _AM_ONAIR_SUREDELETE);
         xoops_cp_footer();
     }
 }

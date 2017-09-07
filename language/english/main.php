@@ -43,7 +43,7 @@ define('_MD_ONAIR_SATDAYNAME', 'Saturday');
 
 // Array used for daynames
 
-$oa_days = array(
+$oa_days = [
     0 => 'Sunday',
     1 => 'monday',
     2 => 'tuesday',
@@ -51,4 +51,4 @@ $oa_days = array(
     4 => 'thursday',
     5 => 'friday',
     6 => 'saturday'
-);
+];

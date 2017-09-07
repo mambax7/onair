@@ -55,7 +55,7 @@ function b_Onair_ajaxcall()
             $nowtime = date('H:i:s');
         }
     }
-    $block = array();
+    $block = [];
     $myts  = MyTextSanitizer::getInstance();
 
     // Get data according to current time
@@ -68,7 +68,7 @@ function b_Onair_ajaxcall()
     }
     while ($myrow = $xoopsDB->fetchArray($result)) {
         $limiter       = $myrow['oa_stop'];
-        $message       = array();
+        $message       = [];
         $oa_pluginname = $myrow['oa_plugin'];
         include XOOPS_ROOT_PATH . '/modules/onair/plugins/plugins.php';
         $message['id']  = $myrow['oa_id'];
@@ -126,7 +126,7 @@ function b_Onair_ajaxcall()
     }
     if ($resultnext) {
         while ($myrownext = $xoopsDB->fetchArray($resultnext)) {
-            $messagenext        = array();
+            $messagenext        = [];
             $messagenext['id']  = $myrownext['oa_id'];
             $messagenext['day'] = onair_Numbers2DaysBlock($myrownext['oa_day']);
             if ($timetype == '1') {

@@ -16,7 +16,7 @@
  * @since         File available since Release 1.0.0
  */
 
-// defined('XOOPS_ROOT_PATH') || exit('XOOPS root path not defined');
+// defined('XOOPS_ROOT_PATH') || exit('Restricted access.');
 
 include XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
@@ -46,7 +46,7 @@ class onair_XoopsFormTimeEuro extends XoopsFormElementTray
         $oa_end   = strtotime('23:59:59');
 
         parent::__construct($caption, '&nbsp;');
-        $timearray = array();
+        $timearray = [];
         for ($i = $oa_start; $i < $oa_end; $i += 900) {
             $key             = $i;
             $timearray[$key] = date('H:i:s', $i);
@@ -83,7 +83,7 @@ class onair_XoopsFormTimeUs extends XoopsFormElementTray
         $oa_end   = strtotime('23:59:59');
 
         parent::__construct($caption, '&nbsp;');
-        $timearray = array();
+        $timearray = [];
         for ($i = $oa_start; $i < $oa_end; $i += 900) {
             $key             = $i;
             $timearray[$key] = date('h:i:s a', $i);
@@ -115,7 +115,7 @@ class onair_OaLists
      */
     public function getImgListAsArray($dirname, $prefix = '')
     {
-        $filelist = array();
+        $filelist = [];
         if ($handle = opendir($dirname)) {
             while (false !== ($file = readdir($handle))) {
                 if (preg_match("/(\.gif|\.jpg|\.png|\.jpeg)$/i", $file)) {

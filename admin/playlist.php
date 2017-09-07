@@ -83,7 +83,7 @@ function onair_PlaylistDel($del = 0)
         redirect_header('playlist.php', 2, _AM_ONAIR_PLAYLISTDEL);
     } else {
         xoops_cp_header();
-        xoops_confirm(array('pl_id' => $_GET['pl_id'], 'del' => 1), 'playlist.php?op=Playlistdel', _AM_ONAIR_SUREDELETE);
+        xoops_confirm(['pl_id' => $_GET['pl_id'], 'del' => 1], 'playlist.php?op=Playlistdel', _AM_ONAIR_SUREDELETE);
         xoops_cp_footer();
     }
 }

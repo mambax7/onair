@@ -74,7 +74,7 @@ function onair_SongDel($del = 0)
         redirect_header('songs.php', 2, _AM_ONAIR_SONGDEL);
     } else {
         xoops_cp_header();
-        xoops_confirm(array('oa_songid' => $_GET['oa_songid'], 'del' => 1), 'songs.php?op=SongDel', _AM_ONAIR_SUREDELETE);
+        xoops_confirm(['oa_songid' => $_GET['oa_songid'], 'del' => 1], 'songs.php?op=SongDel', _AM_ONAIR_SUREDELETE);
         xoops_cp_footer();
     }
 }

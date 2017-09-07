@@ -90,7 +90,7 @@ function onair_EventDel($del = 0)
         redirect_header('main.php', 2, _AM_ONAIR_EVENTDEL);
     } else {
         xoops_cp_header();
-        xoops_confirm(array('oa_id' => $_GET['oa_id'], 'del' => 1), 'main.php?op=Eventdel', _AM_ONAIR_SUREDELETE);
+        xoops_confirm(['oa_id' => $_GET['oa_id'], 'del' => 1], 'main.php?op=Eventdel', _AM_ONAIR_SUREDELETE);
         xoops_cp_footer();
     }
 }

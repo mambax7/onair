@@ -49,7 +49,7 @@ function onair_ImageForm()
     $plist_box->setExtra("size ='50'");
     $my_form->addElement($plist_box);
     $select  = new XoopsFormSelect('Selection', 'select', $value = null, 1, $multiple = false);
-    $options = array('Playtime (winamp)', 'Direttore Logfile', 'Freehand');
+    $options = ['Playtime (winamp)', 'Direttore Logfile', 'Freehand'];
     $select->addOptionArray($options);
     $button_tray = new XoopsFormElementTray('', '');
     $button_tray->addElement(new XoopsFormButton('', 'plistpost', 'Submit', 'submit'));
@@ -67,7 +67,7 @@ if (isset($plistpost)) {
 
 switch ($plistop) {
     case 'plistpost':
-        $allowed_mimetypes = array('text/plain');
+        $allowed_mimetypes = ['text/plain'];
         $plist_dir         = XOOPS_ROOT_PATH . '/' . $oa_listdir;
         require_once XOOPS_ROOT_PATH . '/class/uploader.php';
         $field = $_POST['xoops_upload_file'][0];

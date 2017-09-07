@@ -29,7 +29,7 @@
 function onair_Numbers2Days($oa_day)
 {
     // Give name to all instances of day number
-    $day_arr = array(
+    $day_arr = [
         '0' => _MD_ONAIR_SUNDAYNAME,
         '1' => _MD_ONAIR_MONDAYNAME,
         '2' => _MD_ONAIR_TUEDAYNAME,
@@ -37,7 +37,7 @@ function onair_Numbers2Days($oa_day)
         '4' => _MD_ONAIR_THUDAYNAME,
         '5' => _MD_ONAIR_FRIDAYNAME,
         '6' => _MD_ONAIR_SATDAYNAME
-    );
+    ];
 
     return $day_arr[$oa_day];
 }
@@ -54,7 +54,7 @@ function onair_Numbers2Days($oa_day)
 function onair_Numbers2DaysAdmin($oa_day)
 {
     // Give name to all instances of day number
-    $day_arr = array(
+    $day_arr = [
         '0' => _AM_ONAIR_SUNDAYNAME,
         '1' => _AM_ONAIR_MONDAYNAME,
         '2' => _AM_ONAIR_TUEDAYNAME,
@@ -62,7 +62,7 @@ function onair_Numbers2DaysAdmin($oa_day)
         '4' => _AM_ONAIR_THUDAYNAME,
         '5' => _AM_ONAIR_FRIDAYNAME,
         '6' => _AM_ONAIR_SATDAYNAME
-    );
+    ];
 
     return $day_arr[$oa_day];
 }
@@ -79,7 +79,7 @@ function onair_Numbers2DaysAdmin($oa_day)
 function onair_Numbers2DaysBlock($oa_day)
 {
     // Give name to all instances of day number
-    $day_arr = array(
+    $day_arr = [
         '0' => _MB_ONAIR_SUNDAYNAME,
         '1' => _MB_ONAIR_MONDAYNAME,
         '2' => _MB_ONAIR_TUEDAYNAME,
@@ -87,7 +87,7 @@ function onair_Numbers2DaysBlock($oa_day)
         '4' => _MB_ONAIR_THUDAYNAME,
         '5' => _MB_ONAIR_FRIDAYNAME,
         '6' => _MB_ONAIR_SATDAYNAME
-    );
+    ];
 
     return $day_arr[$oa_day];
 }
@@ -107,7 +107,7 @@ function onair_ShowByDay($oa_day)
     $oa_timetype = onair_GetModuleOption('timetype');
     global $xoopsDB, $xoopsTpl, $timetype, $xoopsModuleConfig, $backgroundcolor;
     $dayname = onair_Numbers2Days($oa_day);
-    $msg     = array();
+    $msg     = [];
     if (isset($_POST['oa_id'])) {
         $oa_day = date('w');
     }
@@ -164,7 +164,7 @@ function onair_ShowByName($oa_name)
     // Sorting by day, start time and name..
     global $xoopsDB, $xoopsTpl, $oa_name, $xoopsModuleConfig, $myts;
 
-    $msg     = array();
+    $msg     = [];
     $myts    = MyTextSanitizer::getInstance();
     $oa_name = $_REQUEST['oa_name'];
     $query   = 'SELECT * FROM ' . $xoopsDB->prefix('oa_program') . ' WHERE oa_name LIKE "%' . $myts->addSlashes($oa_name) . '%" ORDER BY oa_day,oa_start ASC';
@@ -217,7 +217,7 @@ function onair_ShowExtInfo($oa_id)
     // Function to show extended information about the show, dj, start -> stop, etc etc
     global $xoopsDB, $xoopsTpl, $oa_id, $oa_days, $xoopsModuleConfig;
 
-    $msg    = array();
+    $msg    = [];
     $oa_id  = $_GET['oa_id'];
     $query  = 'SELECT * FROM ' . $xoopsDB->prefix('oa_program') . ' WHERE oa_id=' . (int)$oa_id . '';
     $result = $xoopsDB->queryF($query);
@@ -263,7 +263,7 @@ function onair_ShowExtInfo($oa_id)
 function onair_GetModuleOption($option, $repmodule = 'onair')
 {
     global $xoopsModuleConfig, $xoopsModule;
-    static $tbloptions = array();
+    static $tbloptions = [];
     if (is_array($tbloptions) && array_key_exists($option, $tbloptions)) {
         return $tbloptions[$option];
     }
@@ -307,7 +307,7 @@ function onair_PlayListById($pl_id)
     // based on the id-select
     global $xoopsDB, $xoopsTpl, $pl_name, $xoopsModuleConfig;
 
-    $msg    = array();
+    $msg    = [];
     $pl_id  = $_REQUEST['pl_id'];
     $query  = 'SELECT * FROM ' . $xoopsDB->prefix('oa_playlist') . ' WHERE pl_id =' . (int)$pl_id . '';
     $result = $xoopsDB->query($query);
@@ -356,7 +356,7 @@ function onair_PlaylistByName($pl_name)
     // Sorting by day, start time and name..
     global $xoopsDB, $xoopsTpl, $oa_name, $xoopsModuleConfig;
     $myts    = MyTextSanitizer::getInstance();
-    $msg     = array();
+    $msg     = [];
     $pl_name = $_REQUEST['pl_name'];
     $query   = 'SELECT * FROM ' . $xoopsDB->prefix('oa_playlist') . ' WHERE pl_name LIKE "%' . $myts->addSlashes($pl_name) . '%" ORDER BY pl_date, pl_day, pl_start ASC';
     $result  = $xoopsDB->query($query);
@@ -409,7 +409,7 @@ function onair_PlaylistByTitle($pl_title)
     // Sorting by day, start time and name..
     global $xoopsDB, $xoopsTpl, $pl_title, $xoopsModuleConfig;
 
-    $msg      = array();
+    $msg      = [];
     $pl_title = $_GET['pl_title'];
     if ($_GET['pl_title'] == '') {
         $pl_title = '';
@@ -464,7 +464,7 @@ function onair_PlaylistAll()
     // Function to show names similar to the one choosen
     // Sorting by day, start time and name..
     global $xoopsDB, $xoopsTpl, $xoopsModuleConfig;
-    $msg    = array();
+    $msg    = [];
     $myts   = MyTextSanitizer::getInstance();
     $query  = 'SELECT * FROM ' . $xoopsDB->prefix('oa_playlist') . ' ORDER BY pl_date, pl_day, pl_start ASC';
     $result = $xoopsDB->query($query);
@@ -636,7 +636,7 @@ function onair_ChartLastWeek($oa_songsong, $oa_songweek, $year)
 {
     //include XOOPS_ROOT_PATH.'/header.php';
     global $xoopsDB, $myts;
-    $msg      = array();
+    $msg      = [];
     $myts     = MyTextSanitizer::getInstance();
     $lastweek = $oa_songweek - 1;
     if ($lastweek <= 0) {
@@ -737,7 +737,7 @@ function onair_TopPlace($song, $year)
 {
     global $xoopsDB;
     $myts     = MyTextSanitizer::getInstance();
-    $newarray = array();
+    $newarray = [];
     for ($x = 1; $x <= 52; ++$x) {
         $sql    = 'SELECT oa_songsong, count(*) FROM ' . $xoopsDB->prefix('oa_hitlist') . ' WHERE oa_songweek = ' . (int)$x . ' AND oa_songyear = ' . (int)$year . ' GROUP BY oa_songsong ORDER BY count(*) DESC';
         $result = $xoopsDB->queryF($sql);
@@ -762,7 +762,7 @@ function onair_TopPlace($song, $year)
 function onair_GetChartFromWeek($week, $year)
 {
     global $xoopsDB, $myts, $xoopsTpl;
-    $msg    = array();
+    $msg    = [];
     $query  = 'SELECT oa_songsong, count(*) FROM ' . $xoopsDB->prefix('oa_hitlist') . ' WHERE oa_songweek = ' . (int)$week . ' AND oa_songyear = ' . (int)$year . ' GROUP BY oa_songsong ORDER BY count(*) DESC LIMIT 20';
     $result = $xoopsDB->query($query);
     $i      = $xoopsDB->getRowsNum($result);

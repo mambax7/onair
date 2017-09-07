@@ -67,7 +67,7 @@ switch ($imageop) {
         $max_imgsize       = $oa_maxfilesize;
         $max_imgwidth      = $oa_width;
         $max_imgheight     = $oa_height;
-        $allowed_mimetypes = array('image/gif', 'image/jpeg', 'image/pjpeg', 'image/x-png', 'image/jpg');
+        $allowed_mimetypes = ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/x-png', 'image/jpg'];
         $img_dir           = XOOPS_ROOT_PATH . '/' . $oa_imgdir;
 
         require_once XOOPS_ROOT_PATH . '/class/uploader.php';

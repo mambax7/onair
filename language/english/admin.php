@@ -37,8 +37,10 @@ define('_AM_ONAIR_SONGDATETIME', 'Date/time played');
 
 //Added 1.05
 define('_AM_ONAIR_UPLOADSONGS', 'Upload song data');
-define('_AM_ONAIR_UPLOADSONGSDESC',
-       'Choose here the format of your player log file. (DireTTore or Playtime_Winamp_Plugin).<br><br>Check the content the file if you need to make a custom file.<br><br>The songs will then be put each and independently into a table with date, start time, week number, Artist - title, and year, and will be used to make a chart / Hitlist of your most played music.<br>');
+define(
+    '_AM_ONAIR_UPLOADSONGSDESC',
+       'Choose here the format of your player log file. (DireTTore or Playtime_Winamp_Plugin).<br><br>Check the content the file if you need to make a custom file.<br><br>The songs will then be put each and independently into a table with date, start time, week number, Artist - title, and year, and will be used to make a chart / Hitlist of your most played music.<br>'
+);
 
 //%%%%%%    Days    %%%%%
 define('_AM_ONAIR_SUNDAYNAME', 'Sunday');
@@ -48,7 +50,7 @@ define('_AM_ONAIR_WEDDAYNAME', 'Wednesday');
 define('_AM_ONAIR_THUDAYNAME', 'Thursday');
 define('_AM_ONAIR_FRIDAYNAME', 'Friday');
 define('_AM_ONAIR_SATDAYNAME', 'Saturday');
-$oa_days = array(
+$oa_days = [
     0 => 'Sunday',
     1 => 'monday',
     2 => 'tuesday',
@@ -57,7 +59,7 @@ $oa_days = array(
     5 => 'friday',
     6 => 'saturday',
     7 => 'sunday'
-);
+];
 
 //%%%%%%    Images etc  %%%%%
 define('_AM_IMAGEUPLOAD_', 'Upload new image');
