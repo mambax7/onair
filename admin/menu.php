@@ -25,46 +25,61 @@ if (false !== ($moduleHelper = Xmf\Module\Helper::getHelper($moduleDirName))) {
     $moduleHelper = Xmf\Module\Helper::getHelper('system');
 }
 
-
 $pathIcon32 = \Xmf\Module\Admin::menuIconPath('');
 //$pathModIcon32 = $moduleHelper->getModule()->getInfo('modicons32');
 
 $moduleHelper->loadLanguage('modinfo');
 
-$adminmenu              = [];
-$i                      = 0;
-'title' =>  _AM_MODULEADMIN_HOME,
-'link' =>  'admin/index.php',
-'icon' =>  $pathIcon32 . '/home.png',
-//++$i;
+$adminmenu[] = [
+    'title' => _AM_MODULEADMIN_HOME,
+    'link'  => 'admin/index.php',
+    'icon'  => $pathIcon32 . '/home.png',
+];
+
+//$adminmenu[] = [
 //'title' =>  _MI_OLEDRION_ADMENU10,
 //'link' =>  "admin/main.php",
 //$adminmenu[$i]["icon"]  = $pathIcon32 . '/manage.png';
-++$i;
-'title' =>  _MI_ONAIR_PROGRAM_EDIT,
-'link' => Eventshow',
-'icon' =>  $pathIcon32 . '/event.png',
-++$i;
-'title' =>  _MI_ONAIR_ADDNEW,
-'link' => Addnew',
-'icon' =>  $pathIcon32 . '/add.png',
-++$i;
-'title' =>  _MI_ONAIR_ADDIMAGE,
-'link' => ImageUpload',
-'icon' =>  $pathIcon32 . '/upload.png',
-++$i;
-'title' =>  _MI_ONAIR_PLAYLISTMENU,
-'link' => Playlistshow',
-'icon' =>  $pathIcon32 . '/view_detailed.png',
-++$i;
-'title' =>  _MI_ONAIR_SONGS,
-'link' =>  'admin/songs.php',
-'icon' =>  $pathIcon32 . '/playlist.png',
-//++$i;
+//];
+
+$adminmenu[] = [
+    'title' => _MI_ONAIR_PROGRAM_EDIT,
+    'link'  => 'admin/main.php?op=Eventshow',
+    'icon'  => $pathIcon32 . '/event.png',
+];
+
+$adminmenu[] = [
+    'title' => _MI_ONAIR_ADDNEW,
+    'link'  => 'admin/main.php?op=Addnew',
+    'icon'  => $pathIcon32 . '/add.png',
+];
+
+$adminmenu[] = [
+    'title' => _MI_ONAIR_ADDIMAGE,
+    'link'  => 'admin/main.php?op=ImageUpload',
+    'icon'  => $pathIcon32 . '/upload.png',
+];
+
+$adminmenu[] = [
+    'title' => _MI_ONAIR_PLAYLISTMENU,
+    'link'  => 'admin/playlist.php?op=Playlistshow',
+    'icon'  => $pathIcon32 . '/view_detailed.png',
+];
+
+$adminmenu[] = [
+    'title' => _MI_ONAIR_SONGS,
+    'link'  => 'admin/songs.php',
+    'icon'  => $pathIcon32 . '/playlist.png',
+];
+
+//$adminmenu[] = [
 //'title' =>  _MI_ONAIR_HELP,
 //'link' =>  "admin/help.php",
 //$adminmenu[$i]["icon"]  = $pathIcon32 . '/manage.png';
-++$i;
-'title' =>  _AM_MODULEADMIN_ABOUT,
-'link' =>  'admin/about.php',
-'icon' =>  $pathIcon32 . '/about.png',
+//];
+
+$adminmenu[] = [
+    'title' => _AM_MODULEADMIN_ABOUT,
+    'link'  => 'admin/about.php',
+    'icon'  => $pathIcon32 . '/about.png',
+];
