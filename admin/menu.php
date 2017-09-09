@@ -33,38 +33,38 @@ $moduleHelper->loadLanguage('modinfo');
 
 $adminmenu              = [];
 $i                      = 0;
-$adminmenu[$i]['title'] = _AM_MODULEADMIN_HOME;
-$adminmenu[$i]['link']  = 'admin/index.php';
-$adminmenu[$i]['icon']  = $pathIcon32 . '/home.png';
+'title' =>  _AM_MODULEADMIN_HOME,
+'link' =>  'admin/index.php',
+'icon' =>  $pathIcon32 . '/home.png',
 //++$i;
-//$adminmenu[$i]['title'] = _MI_OLEDRION_ADMENU10;
-//$adminmenu[$i]['link'] = "admin/main.php";
+//'title' =>  _MI_OLEDRION_ADMENU10,
+//'link' =>  "admin/main.php",
 //$adminmenu[$i]["icon"]  = $pathIcon32 . '/manage.png';
 ++$i;
-$adminmenu[$i]['title'] = _MI_ONAIR_PROGRAM_EDIT;
-$adminmenu[$i]['link']  = 'admin/main.php?op=Eventshow';
-$adminmenu[$i]['icon']  = $pathIcon32 . '/event.png';
+'title' =>  _MI_ONAIR_PROGRAM_EDIT,
+'link' => Eventshow',
+'icon' =>  $pathIcon32 . '/event.png',
 ++$i;
-$adminmenu[$i]['title'] = _MI_ONAIR_ADDNEW;
-$adminmenu[$i]['link']  = 'admin/main.php?op=Addnew';
-$adminmenu[$i]['icon']  = $pathIcon32 . '/add.png';
+'title' =>  _MI_ONAIR_ADDNEW,
+'link' => Addnew',
+'icon' =>  $pathIcon32 . '/add.png',
 ++$i;
-$adminmenu[$i]['title'] = _MI_ONAIR_ADDIMAGE;
-$adminmenu[$i]['link']  = 'admin/main.php?op=ImageUpload';
-$adminmenu[$i]['icon']  = $pathIcon32 . '/upload.png';
+'title' =>  _MI_ONAIR_ADDIMAGE,
+'link' => ImageUpload',
+'icon' =>  $pathIcon32 . '/upload.png',
 ++$i;
-$adminmenu[$i]['title'] = _MI_ONAIR_PLAYLISTMENU;
-$adminmenu[$i]['link']  = 'admin/playlist.php?op=Playlistshow';
-$adminmenu[$i]['icon']  = $pathIcon32 . '/view_detailed.png';
+'title' =>  _MI_ONAIR_PLAYLISTMENU,
+'link' => Playlistshow',
+'icon' =>  $pathIcon32 . '/view_detailed.png',
 ++$i;
-$adminmenu[$i]['title'] = _MI_ONAIR_SONGS;
-$adminmenu[$i]['link']  = 'admin/songs.php';
-$adminmenu[$i]['icon']  = $pathIcon32 . '/playlist.png';
+'title' =>  _MI_ONAIR_SONGS,
+'link' =>  'admin/songs.php',
+'icon' =>  $pathIcon32 . '/playlist.png',
 //++$i;
-//$adminmenu[$i]['title'] = _MI_ONAIR_HELP;
-//$adminmenu[$i]['link'] = "admin/help.php";
+//'title' =>  _MI_ONAIR_HELP,
+//'link' =>  "admin/help.php",
 //$adminmenu[$i]["icon"]  = $pathIcon32 . '/manage.png';
 ++$i;
-$adminmenu[$i]['title'] = _AM_MODULEADMIN_ABOUT;
-$adminmenu[$i]['link']  = 'admin/about.php';
-$adminmenu[$i]['icon']  = $pathIcon32 . '/about.png';
+'title' =>  _AM_MODULEADMIN_ABOUT,
+'link' =>  'admin/about.php',
+'icon' =>  $pathIcon32 . '/about.png',
