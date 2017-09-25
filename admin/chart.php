@@ -24,15 +24,15 @@ include __DIR__ . '/../include/classes.php';
 
 $top_timetype = onair_GetModuleOption('timetype');
 
-if (isset($_GET['op']) && $_GET['op'] === 'chart_show') {
+if (isset($_GET['op']) && 'chart_show' === $_GET['op']) {
     $op = 'chart_show';
 }
 
-if (isset($_GET['op']) && $_GET['op'] === 'chart_create') {
+if (isset($_GET['op']) && 'chart_create' === $_GET['op']) {
     $op = 'chart_create';
 }
 
-if (isset($_GET['op']) && $_GET['op'] === 'chart_delete') {
+if (isset($_GET['op']) && 'chart_delete' === $_GET['op']) {
     $op = 'chart_delete';
 }
 
@@ -77,7 +77,7 @@ function onair_ChartIndex()
 function onair_ChartDel($del = 0)
 {
     global $xoopsDB;
-    if (isset($_POST['del']) && $_POST['del'] == 1) {
+    if (isset($_POST['del']) && 1 == $_POST['del']) {
         $result = $xoopsDB->query('DELETE FROM ' . $xoopsDB->prefix('oa_charts') . ' WHERE ch_chartid = ' . (int)$_POST['ch_chartid'] . '');
         redirect_header('chart.php', 2, _AM_ONAIR_CHARTDEL);
     } else {

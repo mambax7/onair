@@ -72,20 +72,20 @@ switch ($plistop) {
         require_once XOOPS_ROOT_PATH . '/class/uploader.php';
         $field = $_POST['xoops_upload_file'][0];
 
-        if (!empty($field) || $field != '') {
+        if (!empty($field) || '' != $field) {
             $uploader = new XoopsMediaUploader($plist_dir, $allowed_mimetypes, 500000, null, null);
             $uploader->setPrefix('img');
             if ($uploader->fetchMedia($field) && $uploader->upload()) {
                 //redirect_header("index.php",5,_AM_ONAIR_UPLOADSUCCESS." <br> ".AM_ONAIR_SAVEDAS. $uploader->getSavedFileName()." <br> "._AM_ONAIR_FULLPATH.$uploader->getSavedDestination());
                 $savename = $uploader->getSavedFileName();
 
-                if ($select == '0') {
+                if ('0' == $select) {
                     onair_ExplodeTextWinamp($_POST['select'], $savename);
                 }
-                if ($select == '1') {
+                if ('1' == $select) {
                     onair_ExplodeTextDirettore($_POST['select'], $savename);
                 }
-                if ($select == '2') {
+                if ('2' == $select) {
                     onair_ExplodeTextFreehand($_POST['select'], $savename);
                 }
             } else {
@@ -113,7 +113,7 @@ function onair_ExplodeTextWinamp($select, $savedname)
 {
     global $xoopsDB, $uploader, $plist_dir, $myts;
     $oa_listtype = $_POST['select'];
-    if ($oa_listtype == '0') {
+    if ('0' == $oa_listtype) {
         // Read data to database
         $file = $plist_dir . '/' . $uploader->getSavedFileName();
         $fp   = fopen($file, 'r');
@@ -166,7 +166,7 @@ function onair_ExplodeTextDirettore($select, $savedname)
 {
     global $xoopsDB, $uploader, $plist_dir, $myts;
     $oa_listtype = $_POST['select'];
-    if ($oa_listtype == '1') {
+    if ('1' == $oa_listtype) {
         // Read data to database
         $file = $plist_dir . '/' . $uploader->getSavedFileName();
         $fp   = fopen($file, 'r');
@@ -223,7 +223,7 @@ function onair_ExplodeTextFreehand($select, $savedname)
 {
     global $xoopsDB, $uploader, $plist_dir, $myts;
     $oa_listtype = $_POST['select'];
-    if ($oa_listtype == '2') {
+    if ('2' == $oa_listtype) {
         // Read data to database
         $file = $plist_dir . '/' . $uploader->getSavedFileName();
         $fp   = fopen($file, 'r');

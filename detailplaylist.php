@@ -20,7 +20,7 @@ include __DIR__ . '/include/functions.php';
 $GLOBALS['xoopsOption']['template_main'] = 'onair_playlistdetail.tpl';
 include XOOPS_ROOT_PATH . '/header.php';
 global $xoopsDB;
-if (isset($_GET['plext']) && $_GET['plext'] === 'info') {
+if (isset($_GET['plext']) && 'info' === $_GET['plext']) {
     $plext = 'info';
 }
 

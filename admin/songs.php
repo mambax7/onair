@@ -24,16 +24,16 @@ include __DIR__ . '/../include/classes.php';
 onair_clean_illegalSongData();
 $song_timetype = onair_GetModuleOption('timetype');
 
-if (isset($_GET['op']) && $_GET['op'] === 'Songlistshow') {
+if (isset($_GET['op']) && 'Songlistshow' === $_GET['op']) {
     $op = 'Songlistshow';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'SongEdit') {
+if (isset($_GET['op']) && 'SongEdit' === $_GET['op']) {
     $op = 'SongEdit';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Songsave') {
+if (isset($_GET['op']) && 'Songsave' === $_GET['op']) {
     $op = 'Songsave';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Songdel') {
+if (isset($_GET['op']) && 'Songdel' === $_GET['op']) {
     $op = 'Songdel';
 }
 /**
@@ -69,7 +69,7 @@ function onair_SongChoice()
 function onair_SongDel($del = 0)
 {
     global $xoopsDB;
-    if (isset($_POST['del']) && $_POST['del'] == 1) {
+    if (isset($_POST['del']) && 1 == $_POST['del']) {
         $result = $xoopsDB->query('DELETE FROM ' . $xoopsDB->prefix('oa_hitlist') . ' WHERE oa_songid = ' . (int)$_POST['oa_songid'] . '');
         redirect_header('songs.php', 2, _AM_ONAIR_SONGDEL);
     } else {

@@ -24,25 +24,25 @@ include __DIR__ . '/../include/classes.php';
 
 $pl_timetype = onair_GetModuleOption('timetype');
 
-if (isset($_GET['op']) && $_GET['op'] === 'Playlistshow') {
+if (isset($_GET['op']) && 'Playlistshow' === $_GET['op']) {
     $op = 'Playlistshow';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Playlistedit') {
+if (isset($_GET['op']) && 'Playlistedit' === $_GET['op']) {
     $op = 'Playlistedit';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Playlistdel') {
+if (isset($_GET['op']) && 'Playlistdel' === $_GET['op']) {
     $op = 'Playlistdel';
 }
-if (isset($_POST['op']) && $_POST['op'] === 'Playlistsave') {
+if (isset($_POST['op']) && 'Playlistsave' === $_POST['op']) {
     $op = 'Playlistsave';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Playlist') {
+if (isset($_GET['op']) && 'Playlist' === $_GET['op']) {
     $op = 'Playlist';
 }
 if (empty($op)) {
     $op = 'Playlistchoice';
 }
-if (isset($_GET['op']) && $_GET['op'] == 'Playlist' && $_GET['oa_id'] == '') {
+if (isset($_GET['op']) && 'Playlist' == $_GET['op'] && '' == $_GET['oa_id']) {
     redirect_header('index.php?op=Eventshow', 4, _AM_ONAIR_NOTEXISTEVENT);
 }
 
@@ -78,7 +78,7 @@ function onair_PlaylistChoice()
 function onair_PlaylistDel($del = 0)
 {
     global $xoopsDB;
-    if (isset($_POST['del']) && $_POST['del'] == 1) {
+    if (isset($_POST['del']) && 1 == $_POST['del']) {
         $result = $xoopsDB->query('DELETE FROM ' . $xoopsDB->prefix('oa_playlist') . ' WHERE pl_id = ' . (int)$_POST['pl_id'] . '');
         redirect_header('playlist.php', 2, _AM_ONAIR_PLAYLISTDEL);
     } else {
@@ -237,11 +237,11 @@ function onair_PlaylistShow()
         $pl_id    = $myrow['pl_id'];
         $pl_day   = $myrow['pl_day'];
         $pl_title = $myts->htmlSpecialChars($myts->stripSlashesGPC($myrow['pl_title']));
-        if ($pl_timetype == 0) {
+        if (0 == $pl_timetype) {
             $pl_start = date('H:i:s', strtotime($myrow['pl_start']));
             $pl_stop  = date('H:i:s', strtotime($myrow['pl_stop']));
         }
-        if ($pl_timetype == 1) {
+        if (1 == $pl_timetype) {
             $pl_start = date('h:i:s a', strtotime($myrow['pl_start']));
             $pl_stop  = date('h:i:s a', strtotime($myrow['pl_stop']));
         }

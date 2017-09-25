@@ -25,28 +25,28 @@ include __DIR__ . '/../include/classes.php';
 
 $oa_timetype = onair_GetModuleOption('timetype');
 
-if (isset($_GET['op']) && $_GET['op'] == 'Eventshow') {
+if (isset($_GET['op']) && 'Eventshow' == $_GET['op']) {
     $op = 'Eventshow';
 }
-if (isset($_GET['op']) && $_GET['op'] == 'Eventedit') {
+if (isset($_GET['op']) && 'Eventedit' == $_GET['op']) {
     $op = 'Eventedit';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Eventdel') {
+if (isset($_GET['op']) && 'Eventdel' === $_GET['op']) {
     $op = 'Eventdel';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Eventapprove') {
+if (isset($_GET['op']) && 'Eventapprove' === $_GET['op']) {
     $op = 'Eventapprove';
 }
-if (isset($_POST['op']) && $_POST['op'] === 'Eventsave') {
+if (isset($_POST['op']) && 'Eventsave' === $_POST['op']) {
     $op = 'Eventsave';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'Addnew') {
+if (isset($_GET['op']) && 'Addnew' === $_GET['op']) {
     $op = 'Addnew';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'ImageUpload') {
+if (isset($_GET['op']) && 'ImageUpload' === $_GET['op']) {
     $op = 'ImageUpload';
 }
-if (isset($_GET['op']) && $_GET['op'] === 'PlayList') {
+if (isset($_GET['op']) && 'PlayList' === $_GET['op']) {
     $op = 'PlayList';
 }
 /**
@@ -85,7 +85,7 @@ function Choice()
 function onair_EventDel($del = 0)
 {
     global $xoopsDB;
-    if (isset($_POST['del']) && $_POST['del'] == 1) {
+    if (isset($_POST['del']) && 1 == $_POST['del']) {
         $result = $xoopsDB->query('DELETE FROM ' . $xoopsDB->prefix('oa_program') . ' WHERE oa_id = ' . (int)$_POST['oa_id'] . '');
         redirect_header('main.php', 2, _AM_ONAIR_EVENTDEL);
     } else {
@@ -106,14 +106,14 @@ function onair_EventDel($del = 0)
 function onair_EventSave()
 {
     global $xoopsDB, $oa_timetype, $numbers2days;
-    if (onair_GetModuleOption('timetype') == '1') {
+    if ('1' == onair_GetModuleOption('timetype')) {
         $_POST['oa_start'] = date('h:i:s a', $_POST['oa_start']);
         $_POST['oa_stop']  = date('h:i:s a', $_POST['oa_stop']);
         if ($_POST['oa_stop'] < $_POST['oa_start']) {
             $_POST['oa_stop'] = '11:59:59 pm';
         }
     } else {
-        if (onair_GetModuleOption('timetype') == '0') {
+        if ('0' == onair_GetModuleOption('timetype')) {
             $_POST['oa_start'] = date('H:i:s', $_POST['oa_start']);
             $_POST['oa_stop']  = date('H:i:s', $_POST['oa_stop']);
             if ($_POST['oa_stop'] < $_POST['oa_start']) {
@@ -196,7 +196,7 @@ function onair_EventEdit($oa_id)
 
     // determine 12 hour Or 24 hour format time
 
-    if (onair_GetModuleOption('timetype') == '0') {
+    if ('0' == onair_GetModuleOption('timetype')) {
 
         // Uses class to set 24 hour format
         $edformstart = new onair_XoopsFormTimeEuro(_AM_ONAIR_START, 'oa_start', 20);
@@ -207,7 +207,7 @@ function onair_EventEdit($oa_id)
         $edform->addElement($edformstop);
     } // Uses class to set 12 hour format
     else {
-        if (onair_GetModuleOption('timetype') == '1') {
+        if ('1' == onair_GetModuleOption('timetype')) {
             $edformstart = new onair_XoopsFormTimeUs(_AM_ONAIR_START, 'oa_start', 20);
             $edform->addElement($edformstart);
             $edformstop = new onair_XoopsFormTimeUs(_AM_ONAIR_STOP, 'oa_stop', 15);
@@ -222,7 +222,7 @@ function onair_EventEdit($oa_id)
 
     $imgdir = '/modules/' . $xoopsModule->dirname() . '/assets/images';
 
-    if ($oa_image == '0') {
+    if ('0' == $oa_image) {
         $oa_image = 'blank.gif';
     }
     $graph_array = &onair_OaLists::getImgListAsArray(XOOPS_ROOT_PATH . $imgdir . '/');
@@ -302,11 +302,11 @@ function onair_EventShow()
         $oa_id    = $myrow['oa_id'];
         $oa_day   = $myrow['oa_day'];
         $oa_title = $myts->htmlSpecialChars($myts->stripSlashesGPC($myrow['oa_title']));
-        if ($oa_timetype == 0) {
+        if (0 == $oa_timetype) {
             $oa_start = date('H:i:s', strtotime($myrow['oa_start']));
             $oa_stop  = date('H:i:s', strtotime($myrow['oa_stop']));
         }
-        if ($oa_timetype == 1) {
+        if (1 == $oa_timetype) {
             $oa_start = date('h:i:s a', strtotime($myrow['oa_start']));
             $oa_stop  = date('h:i:s a', strtotime($myrow['oa_stop']));
         }
@@ -418,7 +418,7 @@ function onair_AddNew()
     // determine 12 hour Or 24 hour format time
 
     // Uses class to set 12 hour format
-    if (onair_GetModuleOption('timetype') == '1') {
+    if ('1' == onair_GetModuleOption('timetype')) {
         $signformstarteu = new onair_XoopsFormTimeUs(_AM_ONAIR_START, 'oa_start', 20);
         $signform->addElement($signformstarteu);
         $signformstopeu = new onair_XoopsFormTimeUs(_AM_ONAIR_STOP, 'oa_stop', 15);
@@ -426,7 +426,7 @@ function onair_AddNew()
         $oa_start = date('h:i:s a', strtotime($oa_start));
         $oa_stop  = date('h:i:s a', strtotime($oa_stop));
     } else {
-        if (onair_GetModuleOption('timetype') == '0') {
+        if ('0' == onair_GetModuleOption('timetype')) {
 
             // Uses class to set 24 hour format
 
@@ -445,7 +445,7 @@ function onair_AddNew()
 
     // Is smilies allowed ?
     global $xoopsModuleConfig, $oa_images;
-    if ($xoopsModuleConfig['smiliesallow'] == 1) {
+    if (1 == $xoopsModuleConfig['smiliesallow']) {
         ob_start();
         echo xoopsSmilies('oa_description');
         $signform->addElement(new XoopsFormLabel('', ob_get_contents()));
@@ -455,7 +455,7 @@ function onair_AddNew()
     // Choose image
     $imgdir = '/modules/' . $xoopsModule->dirname() . '/assets/images';
 
-    if ($oa_images == '0') {
+    if ('0' == $oa_images) {
         $oa_images = 'blank.gif';
     }
     $graph_array = &onair_OaLists::getImgListAsArray(XOOPS_ROOT_PATH . $imgdir . '/');

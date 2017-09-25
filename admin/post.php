@@ -26,14 +26,14 @@ $oa_day      = $myts->htmlSpecialChars($_POST['oa_day']);
 $oa_station  = $myts->htmlSpecialChars($_POST['oa_station']);
 $oa_name     = $myts->htmlSpecialChars($_POST['oa_name']);
 $oa_title    = $myts->htmlSpecialChars($_POST['oa_title']);
-if (onair_GetModuleOption('timetype') == '0') {
+if ('0' == onair_GetModuleOption('timetype')) {
     $oa_start = date('H:i:s', $_POST['oa_start']);
     $oa_stop  = date('H:i:s', $_POST['oa_stop']);
     if ($oa_stop < $oa_start) {
         $_oa_stop = '23:59:59';
     }
 }
-if (onair_GetModuleOption('timetype') == '1') {
+if ('1' == onair_GetModuleOption('timetype')) {
     $oa_start = date('h:i:s a', $_POST['oa_start']);
     $oa_stop  = date('h:i:s a', $_POST['oa_stop']);
     if ($oa_stop < $oa_start) {
@@ -74,7 +74,7 @@ if (!$result = $xoopsDB->query($sqlinsert)) {
 }
 
 // Send mail to webmaster
-if ($xoopsModuleConfig['adminmail'] == 1) {
+if (1 == $xoopsModuleConfig['adminmail']) {
     $subject     = $xoopsConfig['sitename'] . ' - ' . _AM_ONAIR_NAMEMODULE;
     $xoopsMailer = xoops_getMailer();
     $xoopsMailer->useMail();

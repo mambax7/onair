@@ -47,11 +47,11 @@ function b_Onair_ajaxcall()
     $timetype    = onair_GetModuleOption('timetype');
 
     // IF timetype = American (12 hour am/pm)
-    if ($timetype == '1') {
+    if ('1' == $timetype) {
         $nowtime = date('h:i:s a');
     } // IF european time (24 hour)
     else {
-        if ($timetype == '0') {
+        if ('0' == $timetype) {
             $nowtime = date('H:i:s');
         }
     }
@@ -73,13 +73,13 @@ function b_Onair_ajaxcall()
         include XOOPS_ROOT_PATH . '/modules/onair/plugins/plugins.php';
         $message['id']  = $myrow['oa_id'];
         $message['day'] = onair_Numbers2DaysBlock($myrow['oa_day']);
-        if ($timetype == '1') {
+        if ('1' == $timetype) {
             $message['start']  = date('h:i:s a', strtotime($myrow['oa_start']));
             $message['stop']   = date('h:i:s a', strtotime($myrow['oa_stop']));
             $nextstop          = date('h:i:s a', strtotime($myrow['oa_stop']));
             $nextbeginabsolute = '12:00:00 am';
         } else {
-            if ($timetype == '0') {
+            if ('0' == $timetype) {
                 $message['start']  = date('H:i:s', strtotime($myrow['oa_start']));
                 $message['stop']   = date('H:i:s', strtotime($myrow['oa_stop']));
                 $nextstop          = date('H:i:s', strtotime($myrow['oa_stop']));
@@ -99,7 +99,7 @@ function b_Onair_ajaxcall()
         $message['host']        = _MB_ONAIR_HOST;
         $block['onair'][]       = $message;
     }
-    if ($nowday == '6' | $dayoffset > '0') {
+    if ('6' == $nowday | $dayoffset > '0') {
         $nowday2 = '0';
     } else {
         $nowday2 = $nowday + $dayoffset;
@@ -107,12 +107,12 @@ function b_Onair_ajaxcall()
     // Get data according to upcomming event
     $sqlnext2    = 'SELECT * FROM  ' . $xoopsDB->prefix('oa_program') . " WHERE '$nextstop' >= oa_start AND '$nowday' = oa_day order by oa_start, oa_stop LIMIT 1";
     $resultnext2 = $xoopsDB->getRowsNum($sqlnext2);
-    if ($resultnext2 < 1 && $nowday == 0) {
+    if ($resultnext2 < 1 && 0 == $nowday) {
         $sqlnext    = 'SELECT * FROM  ' . $xoopsDB->prefix('oa_program') . " WHERE oa_day = '1' ORDER BY oa_start, oa_stop LIMIT 1";
         $resultnext = $xoopsDB->queryF($sqlnext);
     }
 
-    if ($resultnext2 < 1 && $nowday == 6) {
+    if ($resultnext2 < 1 && 6 == $nowday) {
         $sqlnext    = 'SELECT * FROM  ' . $xoopsDB->prefix('oa_program') . " WHERE '$nextstop' <= oa_start AND '$nowday' = oa_day order by oa_start, oa_stop LIMIT 1";
         $resultnext = $xoopsDB->queryF($sqlnext);
         if ($resultnext < 1) {
@@ -129,7 +129,7 @@ function b_Onair_ajaxcall()
             $messagenext        = [];
             $messagenext['id']  = $myrownext['oa_id'];
             $messagenext['day'] = onair_Numbers2DaysBlock($myrownext['oa_day']);
-            if ($timetype == '1') {
+            if ('1' == $timetype) {
                 $messagenext['start'] = date('h:i:s a', strtotime($myrownext['oa_start']));
                 $messagenext['stop']  = date('h:i:s a', strtotime($myrownext['oa_stop']));
             } else {

@@ -24,10 +24,10 @@ $show = 'day';
 if (!isset($_GET['oa_day'])) {
     $_GET['oa_day'] = date('w');
 }
-if (isset($_GET['show']) && $_GET['show'] === 'day') {
+if (isset($_GET['show']) && 'day' === $_GET['show']) {
     $show = 'day';
 }
-if (isset($_GET['show']) && $_GET['show'] === 'name') {
+if (isset($_GET['show']) && 'name' === $_GET['show']) {
     $show = 'name';
 }
 

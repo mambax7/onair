@@ -73,7 +73,7 @@ switch ($imageop) {
         require_once XOOPS_ROOT_PATH . '/class/uploader.php';
         $field = $_POST['xoops_upload_file'][0];
 
-        if (!empty($field) || $field != '') {
+        if (!empty($field) || '' != $field) {
             $uploader = new XoopsMediaUploader($img_dir, $allowed_mimetypes, $max_imgsize, $max_imgwidth, $max_imgheight);
             $uploader->setPrefix('img');
             if ($uploader->fetchMedia($field) && $uploader->upload()) {

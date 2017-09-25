@@ -125,7 +125,7 @@ function onair_ShowByDay($oa_day)
         $msg['oa_name']    = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_name']));
         $msg['oa_title']   = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_title']));
         $msg['bgc']        = $backgroundcolor;
-        if ($xoopsModuleConfig['timetype'] == 1) {
+        if (1 == $xoopsModuleConfig['timetype']) {
             $message['start'] = date('h:i:s a', strtotime($sqlfetch['oa_start']));
             $message['stop']  = date('h:i:s a', strtotime($sqlfetch['oa_stop']));
         } else {
@@ -180,7 +180,7 @@ function onair_ShowByName($oa_name)
         $msg['oa_station'] = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_station']));
         $msg['oa_name']    = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_name']));
         $msg['oa_title']   = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_title']));
-        if ($xoopsModuleConfig['timetype'] == 1) {
+        if (1 == $xoopsModuleConfig['timetype']) {
             $message['start'] = date('h:i:s a', strtotime($sqlfetch['oa_start']));
             $message['stop']  = date('h:i:s a', strtotime($sqlfetch['oa_stop']));
         } else {
@@ -229,7 +229,7 @@ function onair_ShowExtInfo($oa_id)
         $msg['oa_station'] = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_station']));
         $msg['oa_name']    = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_name']));
         $msg['oa_title']   = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['oa_title']));
-        if ($xoopsModuleConfig['timetype'] == 1) {
+        if (1 == $xoopsModuleConfig['timetype']) {
             $message['start'] = date('h:i:s a', strtotime($sqlfetch['oa_start']));
             $message['stop']  = date('h:i:s a', strtotime($sqlfetch['oa_stop']));
         } else {
@@ -320,7 +320,7 @@ function onair_PlayListById($pl_id)
         $msg['pl_station'] = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['pl_station']));
         $msg['pl_name']    = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['pl_name']));
         $msg['pl_title']   = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['pl_title']));
-        if ($xoopsModuleConfig['timetype'] == 1) {
+        if (1 == $xoopsModuleConfig['timetype']) {
             $message['start'] = date('h:i:s a', strtotime($sqlfetch['pl_start']));
             $message['stop']  = date('h:i:s a', strtotime($sqlfetch['pl_stop']));
         } else {
@@ -371,7 +371,7 @@ function onair_PlaylistByName($pl_name)
         $msg['pl_station'] = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['pl_station']));
         $msg['pl_name']    = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['pl_name']));
         $msg['pl_title']   = $myts->htmlSpecialChars($myts->stripSlashesGPC($sqlfetch['pl_title']));
-        if ($xoopsModuleConfig['timetype'] == 1) {
+        if (1 == $xoopsModuleConfig['timetype']) {
             $message['start'] = date('h:i:s a', strtotime($sqlfetch['pl_start']));
             $message['stop']  = date('h:i:s a', strtotime($sqlfetch['pl_stop']));
         } else {
@@ -411,7 +411,7 @@ function onair_PlaylistByTitle($pl_title)
 
     $msg      = [];
     $pl_title = $_GET['pl_title'];
-    if ($_GET['pl_title'] == '') {
+    if ('' == $_GET['pl_title']) {
         $pl_title = '';
     }
     $query  = 'SELECT * FROM ' . $xoopsDB->prefix('oa_playlist') . ' WHERE pl_title LIKE "%' . $myts->addSlashes($pl_title) . '%" ORDER BY pl_date, pl_day, pl_start ASC';
@@ -428,7 +428,7 @@ function onair_PlaylistByTitle($pl_title)
         $messagedatetime   = strtotime($sqlfetch['pl_date']);
         $messagedate       = date('d-m-Y', $messagedatetime);
         $msg['pl_date']    = $myts->htmlSpecialChars($messagedate);
-        if ($xoopsModuleConfig['timetype'] == 1) {
+        if (1 == $xoopsModuleConfig['timetype']) {
             $message['start'] = date('h:i:s a', strtotime($sqlfetch['pl_start']));
             $message['stop']  = date('h:i:s a', strtotime($sqlfetch['pl_stop']));
         } else {
@@ -479,7 +479,7 @@ function onair_PlaylistAll()
         $messagedatetime   = strtotime($sqlfetch['pl_date']);
         $messagedate       = date('d-m-Y', $messagedatetime);
         $msg['pl_date']    = $myts->htmlSpecialChars($messagedate);
-        if ($xoopsModuleConfig['timetype'] == 1) {
+        if (1 == $xoopsModuleConfig['timetype']) {
             $message['start'] = date('h:i:s a', strtotime($sqlfetch['pl_start']));
             $message['stop']  = date('h:i:s a', strtotime($sqlfetch['pl_stop']));
         } else {
@@ -541,7 +541,7 @@ function onair_ChangeBg($day, $start, $stop)
 {
     $timetype = onair_GetModuleOption('timetype');
     // IF timetype = American (12 hour am/pm)
-    if ($timetype == '1') {
+    if ('1' == $timetype) {
         $nowtime = date('h:i:s a');
         $nowday  = date('w');
         if ($nowtime >= $start and $nowtime < $stop and $day == $nowday) {
@@ -551,7 +551,7 @@ function onair_ChangeBg($day, $start, $stop)
         }
     }
     // IF european time (24 hour)
-    if ($timetype == '0') {
+    if ('0' == $timetype) {
         $nowtime = date('H:i:s');
         $nowday  = date('w');
     }

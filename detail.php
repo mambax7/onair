@@ -20,7 +20,7 @@ include __DIR__ . '/include/functions.php';
 $GLOBALS['xoopsOption']['template_main'] = 'onair_detail.tpl';
 include XOOPS_ROOT_PATH . '/header.php';
 global $xoopsDB;
-if (isset($_GET['ext']) && $_GET['ext'] === 'info') {
+if (isset($_GET['ext']) && 'info' === $_GET['ext']) {
     $ext = 'info';
 }
 

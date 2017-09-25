@@ -22,11 +22,11 @@ include XOOPS_ROOT_PATH . '/header.php';
 global $xoopsDB, $show, $myts;
 $myts = MyTextSanitizer::getInstance();
 $show = '';
-if (isset($_GET['show']) && $_GET['show'] === 'title') {
+if (isset($_GET['show']) && 'title' === $_GET['show']) {
     $show     = 'title';
     $pl_title = $myts->addSlashes($pl_title);
 }
-if (isset($_GET['show']) && $_GET['show'] === 'name') {
+if (isset($_GET['show']) && 'name' === $_GET['show']) {
     $show    = 'name';
     $pl_name = $myts->addSlashes($pl_name);
 }
